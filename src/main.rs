@@ -6,7 +6,7 @@ fn main() {
     println!("Guess the number! (Ctrl-C to quit)");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
-    let mut num_guesses = 0;
+    let mut num_guesses: u8 = 0;
 
     loop {
         println!("Please input your guess between 1 and 100");
@@ -19,7 +19,7 @@ fn main() {
 
         num_guesses += 1;
 
-        let guess: u32 = match guess.trim().parse() {
+        let guess: u8 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
                 println!("Invalid input, please enter a number between 1 and 100.");
